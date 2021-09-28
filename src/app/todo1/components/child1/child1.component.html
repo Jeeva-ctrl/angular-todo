@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card-deck">
+
+                <div class="card">
+                    <div class="card-body">
+                        <p>
+                            This is a common component to all routes
+                        </p>
+                        <p>I am a card</p>
+                        <p>Total number of todos : {{(todos$|async)?.length}}</p>
+                        <p>
+                            No. of Completed Todos: {{ (todos$ | async | filterByCondition: {property: 'completed',
+                            value: true}).length }}
+                        </p>
+                        <p>
+                            No. of Not Completed Todos: {{ (todos$ | async | filterByCondition: {property: 'completed',
+                            value: false}).length }}
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <p>some other card goes here</p>
+                        <p>total no. of employees: {{(users$|async)?.length}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

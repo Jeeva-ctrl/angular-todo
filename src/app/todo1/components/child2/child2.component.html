@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of todo$|async" (click)="onOpen(item)">
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.title}}</td>
+            <td>{{item.completed}}</td>
+        </tr>
+    </tbody>
+</table>
